@@ -1,0 +1,38 @@
+Reproducible Research: Peer Assessment 1
+================================================
+
+## Loading and preprocessing the data
+```{r}
+activity<-read.csv("activity.csv")
+
+#activity$date<-strptime(activity$date, format="%Y-%m-%d")
+str(activity)
+```
+
+
+
+## What is mean total number of steps taken per day?
+
+Histogram:
+```{r}
+stepsbyday<-aggregate(steps ~ date,activity, sum  )
+hist(stepsbyday$steps)
+```
+
+
+
+The mean total number of steps taken per day is:
+```{r}
+mean(stepsbyday$steps)
+```
+
+
+## What is the average daily activity pattern?
+
+
+
+## Imputing missing values
+
+
+
+## Are there differences in activity patterns between weekdays and weekends?
